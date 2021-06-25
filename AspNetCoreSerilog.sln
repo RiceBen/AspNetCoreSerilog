@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreSerilog", "AspNetCoreSerilog\AspNetCoreSerilog.csproj", "{CD939E85-1A89-4269-96EA-FA2EC675EF8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreSerilog", "AspNetCoreSerilog\AspNetCoreSerilog.csproj", "{CD939E85-1A89-4269-96EA-FA2EC675EF8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D8F61348-A858-4FBA-89E8-50244B3756AE}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{C50B814D-ACFA-47DC-B773-EC5F668263F9}"
+	ProjectSection(SolutionItems) = preProject
+		dependabot.yml = dependabot.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +28,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C50B814D-ACFA-47DC-B773-EC5F668263F9} = {D8F61348-A858-4FBA-89E8-50244B3756AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {367F7AC0-0DBC-4A30-91A9-90A9E351E738}

@@ -47,7 +47,6 @@ namespace AspNetCoreSerilog.Controllers
             [Required][FromRoute][Description("days that will show")]
             int days)
         {
-
             _logger.LogInformation("star to process action");
             var rng = new Random();
             return Enumerable.Range(1, days).Select(index => new WeatherForecast
@@ -57,7 +56,6 @@ namespace AspNetCoreSerilog.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
-
         }
     }
 }

@@ -1,8 +1,13 @@
+using AspNetCoreSerilog.Filters;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NSwag;
+using NSwag.Generation.Processors.Security;
+using System.Linq;
 
 namespace AspNetCoreSerilog
 {
@@ -39,9 +44,26 @@ namespace AspNetCoreSerilog
                             Url = "https://opensource.org/licenses/mit-license.php"
                         };
                     };
+
+                    var apiScheme = new OpenApiSecurityScheme()
+                    {
+                        Type = OpenApiSecuritySchemeType.Http,
+                        Scheme = JwtBearerDefaults.AuthenticationScheme,
+                        BearerFormat = "JWT",
+                        Description = "JWT Token Auth"
+                    };
+                    config.AddSecurity("Bearer", Enumerable.Empty<string>(), apiScheme);
+                    config.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor());
                 });
 
-            services.AddControllers();
+            // Add this when you use Jwt Bearer in asp.net core
+            services.AddAuthentication().AddJwtBearer();
+            services.AddAuthorization();
+            // Add MyAuth as a global auth filter
+            services.AddControllers(option =>
+            {
+                option.Filters.Add(typeof(MyAuth));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
