@@ -57,5 +57,21 @@ namespace AspNetCoreSerilog.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("async")]
+        public async IAsyncEnumerable<WeatherForecast> GetAsync()
+        {
+            var rng = new Random();
+            for (var index = 0; index < 10; ++index)
+            {
+                yield return new WeatherForecast
+                {
+                    Date = DateTime.Now.AddDays(index),
+                    TemperatureC = rng.Next(-20, 55),
+                    Summary = Summaries[rng.Next(Summaries.Length)]
+                };
+                await Task.Delay(1);
+            }
+        }
     }
 }
