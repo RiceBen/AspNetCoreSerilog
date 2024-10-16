@@ -1,0 +1,20 @@
+﻿# Simple workflow for deploying static content to GitHub Pages
+name: PReviewer
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  pull_request:
+
+jobs:
+  # Single deploy job since we're just deploying
+  reviewer:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: PR Review
+        uses: RiceBen/MyPReviewer@13eca99f61f3ececd63e685ba39ff90cb55f2a37
+        with:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          model: llama3
