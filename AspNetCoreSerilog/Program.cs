@@ -17,7 +17,7 @@ namespace AspNetCoreSerilog
                 .AddJsonFile("appsettings.json")
                 .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", true)
                 .Build();
-
+            
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(configuration)
                 .CreateLogger();
@@ -30,7 +30,7 @@ namespace AspNetCoreSerilog
             catch (Exception ex)
             {
                 Log.Fatal(ex, "Host terminated unexpectedly");
-                throw ex;
+                throw;
             }
             finally
             {
