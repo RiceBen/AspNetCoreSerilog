@@ -62,7 +62,7 @@ namespace AspNetCoreSerilog.Controllers
         public async IAsyncEnumerable<WeatherForecast> GetAsync()
         {
             var rng = new Random();
-            for (var index = 0; index < 10; ++index)
+            for (var index = 0; index < rng.Next() % 10 + 1; ++index)
             {
                 yield return new WeatherForecast
                 {
@@ -70,7 +70,7 @@ namespace AspNetCoreSerilog.Controllers
                     TemperatureC = rng.Next(-20, 55),
                     Summary = Summaries[rng.Next(Summaries.Length)]
                 };
-                await Task.Delay(1);
+                await Task.Delay(500);
             }
         }
     }
