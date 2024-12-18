@@ -70,7 +70,7 @@ namespace AspNetCoreSerilog.Controllers
                     TemperatureC = rng.Next(-20, 55),
                     Summary = Summaries[rng.Next(Summaries.Length)]
                 };
-                await Task.Delay(1);
+                await Task.Delay(500);
             }
         }
     }

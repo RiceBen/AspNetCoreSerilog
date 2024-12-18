@@ -12,7 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{C50B814D-ACFA-47DC-B773-EC5F668263F9}"
 	ProjectSection(SolutionItems) = preProject
-		dependabot.yml = dependabot.yml
 		.github\dependabot.yml = .github\dependabot.yml
 		.github\pull_request_review.yml = .github\pull_request_review.yml
 	EndProjectSection
