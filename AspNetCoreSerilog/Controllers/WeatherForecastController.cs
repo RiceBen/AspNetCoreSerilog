@@ -62,7 +62,7 @@ namespace AspNetCoreSerilog.Controllers
         public async IAsyncEnumerable<WeatherForecast> GetAsync()
         {
             var rng = new Random();
-            for (var index = 0; index < 10; ++index)
+            for (var index = 0; index < rng.Next() % 10 + 1; ++index)
             {
                 yield return new WeatherForecast
                 {
