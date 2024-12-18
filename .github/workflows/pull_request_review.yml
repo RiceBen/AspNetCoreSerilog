@@ -17,4 +17,4 @@ jobs:
         uses: RiceBen/oh-llama-review-action@06f80475dd8379ae26626c75c90fc8d6bfb131c6
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          model: codellama
+          model: llama3.2:3b
