@@ -14,7 +14,7 @@ jobs:
       pull-requests: write
     steps:
       - name: PR Review
-        uses: RiceBen/oh-llama-review-action@06f80475dd8379ae26626c75c90fc8d6bfb131c6
+        uses: RiceBen/oh-llama-review-action@963d23df396d1db909c26fbaff5197e97ae11578
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           model: llama3.2:3b
